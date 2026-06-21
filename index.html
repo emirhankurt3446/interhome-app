@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interhome Arama</title>
+    <style>
+        body { font-family: Arial; margin: 30px; }
+        input { padding: 8px; margin: 5px; }
+        button { padding: 10px; cursor: pointer; }
+        .card { border: 1px solid #ddd; padding: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<h2>Interhome Basit Arama</h2>
+
+<form method="POST">
+    <input name="country" placeholder="Ülke (İsviçre)" />
+    <input name="max_price" placeholder="Max Fiyat (800)" />
+    <button type="submit">Ara</button>
+</form>
+
+<hr>
+
+{% for r in results %}
+<div class="card">
+    <b>{{ r.name }}</b><br>
+    💰 {{ r.price }} €<br>
+    🏠 {{ r.features }}
+</div>
+{% endfor %}
+
+</body>
+</html>
